@@ -2,6 +2,7 @@ package com.springboot.clienteapp.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,69 +19,63 @@ public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idUsuario;
+	private Long idUsuario;
 
 	@OneToOne
-	@JoinColumn(name = "idPersona")
-
+	@JoinColumn(name = "persona_id")
 	private Persona persona;
+	
+	@Column(name="correo")
 	private String correo;
+	@Column(name="nombre_usuario")
 	private String nombreUsuario;
+	@Column(name="password")
 	private String password;
+	@Column(name="baja")
 	private boolean baja;
-
-	public int getIdUsuario() {
+	
+	public Long getIdUsuario() {
 		return idUsuario;
 	}
-
-	protected void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-
 	public Persona getPersona() {
 		return persona;
 	}
-
 	public void setPersona(Persona persona) {
 		this.persona = persona;
 	}
-
 	public String getCorreo() {
 		return correo;
 	}
-
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
-
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}
-
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	public boolean isBaja() {
 		return baja;
 	}
-
 	public void setBaja(boolean baja) {
 		this.baja = baja;
 	}
-
 	@Override
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", persona=" + persona + ", correo=" + correo + ", nombreUsuario="
 				+ nombreUsuario + ", password=" + password + ", baja=" + baja + "]";
 	}
+
+	
 
 }

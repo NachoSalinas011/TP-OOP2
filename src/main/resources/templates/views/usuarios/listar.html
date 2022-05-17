@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmls:th="https://thymeLeaf.org">
+
+<head th:replace="plantilla/template :: head">
+</head>
+
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+	<div class="container">
+	<h1 th:text="${titulo}"></h1>
+	<p th:text="${usuarios}"></p>
+	</div>
+	
+	
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

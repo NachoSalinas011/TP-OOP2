@@ -2,6 +2,7 @@ package com.springboot.clienteapp.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,20 +14,27 @@ import javax.persistence.Table;
 public class Persona implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idPersona;
+	private Long idPersona;
+
+	@Column(name="nombre")
 	private String nombre;
+	@Column(name="apellido")
 	private String apellido;
+	@Column(name="tipo_doc")
 	private String tipoDoc;
-	private int nroDoc;
+	@Column(name="nro_doc")
+	private String nroDoc;
+	@Column(name="baja")
 	private boolean baja;
 
-	public int getIdPersona() {
+	public Long getIdPersona() {
 		return idPersona;
 	}
 
-	protected void setIdPersona(int idPersona) {
+	public void setIdPersona(Long idPersona) {
 		this.idPersona = idPersona;
 	}
 
@@ -54,11 +62,11 @@ public class Persona implements Serializable {
 		this.tipoDoc = tipoDoc;
 	}
 
-	public int getNroDoc() {
+	public String getNroDoc() {
 		return nroDoc;
 	}
 
-	public void setNroDoc(int nroDoc) {
+	public void setNroDoc(String nroDoc) {
 		this.nroDoc = nroDoc;
 	}
 
@@ -75,7 +83,5 @@ public class Persona implements Serializable {
 		return "Persona [idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", tipoDoc="
 				+ tipoDoc + ", nroDoc=" + nroDoc + ", baja=" + baja + "]";
 	}
-
-//	
 
 }
