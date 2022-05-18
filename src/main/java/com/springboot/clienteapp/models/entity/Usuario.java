@@ -21,61 +21,118 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idUsuario;
 
-	@OneToOne
-	@JoinColumn(name = "persona_id")
-	private Persona persona;
-	
-	@Column(name="correo")
+	@Column(name = "nombre")
+	private String nombre;
+	@Column(name = "apellido")
+	private String apellido;
+	@Column(name = "tipo_doc")
+	private String tipoDoc;
+	@Column(name = "nro_doc")
+	private String nroDoc;
+	@Column(name = "correo")
 	private String correo;
-	@Column(name="nombre_usuario")
+	@Column(name = "nombre_usuario")
 	private String nombreUsuario;
-	@Column(name="password")
+	@Column(name = "password")
 	private String password;
-	@Column(name="baja")
+	@Column(name = "baja")
 	private boolean baja;
-	
+
+	@OneToOne
+	@JoinColumn(name = "perfil_id")
+	private Perfil perfil;
+
+	// _____________________________________________________________
+
+	public Usuario() {
+		super();
+	}
+
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
+
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	public Persona getPersona() {
-		return persona;
+
+	public String getNombre() {
+		return nombre;
 	}
-	public void setPersona(Persona persona) {
-		this.persona = persona;
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getTipoDoc() {
+		return tipoDoc;
+	}
+
+	public void setTipoDoc(String tipoDoc) {
+		this.tipoDoc = tipoDoc;
+	}
+
+	public String getNroDoc() {
+		return nroDoc;
+	}
+
+	public void setNroDoc(String nroDoc) {
+		this.nroDoc = nroDoc;
+	}
+
 	public String getCorreo() {
 		return correo;
 	}
+
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
+
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public boolean isBaja() {
 		return baja;
 	}
+
 	public void setBaja(boolean baja) {
 		this.baja = baja;
 	}
-	@Override
-	public String toString() {
-		return "Usuario [idUsuario=" + idUsuario + ", persona=" + persona + ", correo=" + correo + ", nombreUsuario="
-				+ nombreUsuario + ", password=" + password + ", baja=" + baja + "]";
+
+	public Perfil getPerfil() {
+		return perfil;
 	}
 
-	
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [idUsuario=" + idUsuario + ", nombre=" + nombre + ", apellido=" + apellido + ", tipoDoc="
+				+ tipoDoc + ", nroDoc=" + nroDoc + ", correo=" + correo + ", nombreUsuario=" + nombreUsuario
+				+ ", password=" + password + ", baja=" + baja + ", perfil=" + perfil + "]";
+	}
 
 }

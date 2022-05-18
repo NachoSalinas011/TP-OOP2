@@ -11,60 +11,68 @@
 		<br>
 		<div class="card bg-light">
 
-			<div class="card-header bg-dark text-white">
+			<div class="card-header bg-dark text-white" th:text="${titulo}">
 				<h1>Crear Usuario</h1>
 			</div>
+
+
 			<div class="card-body">
-
-
-				<form>
+				<form th:action="@{/views/usuarios/save}" th:object="${usuario}" method="post">
 					<!--Persona-->
+					
 					<div class="form-group row">
 						<label for="nombre" class="col-md-2">Nombre</label>
-						<input type="text" class="form-control form-control-sm col-md-6" id="nombre"
+						<input type="text" th:field="*{nombre}" class="form-control form-control-sm col-md-6" id="nombre"
 							placeholder="Nombre">
 					</div>
 					<div class="form-group row">
 						<label for="apellido" class="col-md-2">Apellido</label>
-						<input type="text" class="form-control form-control-sm col-md-6" id="apellido"
+						<input type="text" th:field="*{apellido}" class="form-control form-control-sm col-md-6" id="apellido"
 							placeholder="Apellido">
 					</div>
 					<div class="form-group row">
 						<label for="tipoDocumento" class="col-md-2">Tipo documento</label>
-						<input type="text" class="form-control form-control-sm col-md-6" id="tipoDocumento"
+						<input type="text" th:field="*{tipoDoc}" class="form-control form-control-sm col-md-6" id="tipoDocumento"
 							placeholder="Tipo documento">
 					</div>
 					<div class="form-group row">
 						<label for="documento" class="col-md-2">Documento</label>
-						<input type="text" class="form-control form-control-sm col-md-6" id="documento"
+						<input type="text" th:field="*{nroDoc}" class="form-control form-control-sm col-md-6" id="documento"
 							placeholder="Documento">
 					</div>
+					
 					<!--USUARIO-->
 					<div class="form-group row">
 						<label for="correo" class="col-md-2">Correo</label>
-						<input type="text" class="form-control form-control-sm col-md-6" id="correo"
-							placeholder="Correo">
+						<input type="text" th:field="*{correo}" class="form-control form-control-sm col-md-6"
+							id="correo" placeholder="Correo">
 					</div>
+
 					<div class="form-group row">
 						<label for="usuario" class="col-md-2">Usuario</label>
-						<input type="text" class="form-control form-control-sm col-md-6" id="usuario"
-							placeholder="Usuario">
+						<input type="text" th:field="*{nombreUsuario}" class="form-control form-control-sm col-md-6"
+							id="usuario" placeholder="Usuario">
 					</div>
+
 					<div class="form-group row">
 						<label for="password" class="col-md-2">Password</label>
-						<input type="text" class="form-control form-control-sm col-md-6" id="password"
-							placeholder="Password">
+						<input type="text" th:field="*{password}" class="form-control form-control-sm col-md-6"
+							id="password" placeholder="Password">
 					</div>
+					
 					<div class="form-group row">
 						<label for="perfil" class="col-md-2">Perfil</label>
-						<select class="form-control form-control-sm col-md-6" id="perfil">
-							<option>Administrador</option>
-							<option>Auditoria</option>
+						<select th:field="*{perfil}" class="form-control form-control-sm col-md-6" id="perfil">
+							<option th:each="perfil:${perfiles}" th:value="${perfil.id_perfil}"
+								th:text="${perfil.perfil}"></option>
 						</select>
 					</div>
+					
 					<br>
+
 					<div class="card-footer bg-dark text-center">
-						<input type="submit" class="btn btn-primary btn-sm" value="Crear" th:text="Crear"/>
+					
+						<input type="submit" class="btn btn-primary btn-sm" value="Crear">
 					</div>
 
 				</form>
