@@ -28,4 +28,8 @@ public class UsuarioController {
 		return "/views/usuarios/listar";
 	}
 	
+	@GetMapping("/create")
+	public String crear() {
+		return "/views/usuarios/frmCrear";
+	}
 }
