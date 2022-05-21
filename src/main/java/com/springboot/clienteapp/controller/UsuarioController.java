@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -47,6 +48,23 @@ public class UsuarioController {
 	@PostMapping("/save")
 	public String guardarUsuario(@ModelAttribute Usuario usuario) {
 		usuarioService.agregar(usuario);
+		return "redirect:/views/usuarios/";
+	}
+	
+	@GetMapping("/edit/{idUsuario}")
+	public String editar(@PathVariable("idUsuario") Long id, Model model) {
+		Usuario usuario = usuarioService.traer(id);
+		List<Perfil> listaPerfiles = perfilService.traerListaPerfiles();
+		model.addAttribute("titulo", "Formulario: Editar Usuario");
+		model.addAttribute("usuario", usuario);
+		model.addAttribute("perfiles", listaPerfiles);
+		return "/views/usuarios/frmCrear";
+	}
+	
+	@GetMapping("/delete/{idUsuario}")
+	public String eliminar(@PathVariable("idUsuario") Long id) {
+		usuarioService.eliminar(id);
+		
 		return "redirect:/views/usuarios/";
 	}
 }
