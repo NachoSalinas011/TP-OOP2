@@ -44,7 +44,7 @@
 					<!--USUARIO-->
 					<div class="form-group row">
 						<label for="correo" class="col-md-2">Correo</label>
-						<input type="text" th:field="*{correo}" class="form-control form-control-sm col-md-6"
+						<input type="email" th:field="*{correo}" class="form-control form-control-sm col-md-6"
 							id="correo" placeholder="Correo">
 					</div>
 
@@ -55,8 +55,8 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="password" class="col-md-2">Password</label>
-						<input type="text" th:field="*{password}" class="form-control form-control-sm col-md-6"
+						<label for="password" class="col-md-2">Contraseña</label>
+						<input type="password" th:field="*{password}" class="form-control form-control-sm col-md-6"
 							id="password" placeholder="Password">
 					</div>
 					
@@ -64,7 +64,7 @@
 						<label for="perfil" class="col-md-2">Perfil</label>
 						<select th:field="*{perfil}" class="form-control form-control-sm col-md-6" id="perfil">
 							<option th:each="perfil:${perfiles}" th:value="${perfil.id_perfil}"
-								th:text="${perfil.perfil}"></option>
+								th:text="${perfil.nombrePerfil}"></option>
 						</select>
 					</div>
 					

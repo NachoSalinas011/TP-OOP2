@@ -20,7 +20,7 @@ public class Perfil implements Serializable {
 	private Long id_perfil;
 
 	@Column(name = "perfil")
-	private String perfil;
+	private String nombrePerfil;
 	
 	@Column(name = "baja")
 	private boolean baja;
@@ -39,12 +39,12 @@ public class Perfil implements Serializable {
 		this.id_perfil = id_perfil;
 	}
 
-	public String getPerfil() {
-		return perfil;
+	public String getNombrePerfil() {
+		return nombrePerfil;
 	}
 
-	public void setPerfil(String perfil) {
-		this.perfil = perfil;
+	public void setNombrePerfil(String nombrePerfil) {
+		this.nombrePerfil = nombrePerfil;
 	}
 
 	public boolean isBaja() {
@@ -57,7 +57,7 @@ public class Perfil implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Perfil [id_perfil=" + id_perfil + ", perfil=" + perfil + ", baja=" + baja + "]";
+		return "Perfil [id_perfil=" + id_perfil + ", nombrePerfil=" + nombrePerfil + ", baja=" + baja + "]";
 	}
 
 }

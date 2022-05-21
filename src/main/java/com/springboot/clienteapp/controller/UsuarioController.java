@@ -33,7 +33,7 @@ public class UsuarioController {
 		
 		return "/views/usuarios/listar";
 	}
-	
+
 	@GetMapping("/create")
 	public String crear(Model model) {
 		Usuario usuario = new Usuario();

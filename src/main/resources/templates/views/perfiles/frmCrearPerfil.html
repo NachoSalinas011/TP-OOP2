@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmls:th="https://thymeLeaf.org">
+
+<head th:replace="plantilla/template :: head">
+</head>
+
+<body>
+<header th:replace="plantilla/template :: header"></header>
+
+<div class="container">
+    <br>
+    <div class="card bg-light">
+
+        <div class="card-header bg-dark text-white" th:text="${titulo}">
+            <h1>Crear Perfil</h1>
+        </div>
+
+
+        <div class="card-body">
+            <form th:action="@{/views/perfiles/save}" th:object="${perfil}" method="post">
+                <!--Perfil-->
+
+
+                <div class="form-group row">
+                    <label for="perfil" class="col-md-2">Perfil</label>
+                    <input type="text" th:field="*{nombrePerfil}" class="form-control form-control-sm col-md-6" id="perfil"
+                           placeholder="Perfil">
+                </div>
+
+
+                <br>
+
+                <div class="card-footer bg-dark text-center">
+
+                    <input type="submit" class="btn btn-primary btn-sm" value="Crear">
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

@@ -13,10 +13,26 @@ public class PerfilServiceImplement implements IPerfilService {
 
 	@Autowired
 	private PerfilRepository perfilRepository;
+
+
+	@Override
+	public void agregar(Perfil perfil) {
+		perfilRepository.save(perfil);
+	}
+
+	@Override
+	public void eliminar(long id) {
+		perfilRepository.deleteById(id);
+	}
 	
 	@Override
 	public List<Perfil> traerListaPerfiles() {
 		return (List<Perfil>) perfilRepository.findAll();
+	}
+
+	@Override
+	public Perfil traer(long id) {
+		return perfilRepository.findById(id).orElse(null);
 	}
 
 }
