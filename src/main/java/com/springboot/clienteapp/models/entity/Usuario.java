@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "usuario")
@@ -20,19 +22,27 @@ public class Usuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idUsuario;
-
+	
+	@NotBlank
 	@Column(name = "nombre")
 	private String nombre;
+	@NotBlank
 	@Column(name = "apellido")
 	private String apellido;
+	@NotBlank
 	@Column(name = "tipo_doc")
 	private String tipoDoc;
+	@NotBlank
 	@Column(name = "nro_doc")
 	private String nroDoc;
+	@NotBlank
+	@Email
 	@Column(name = "correo")
 	private String correo;
+	@NotBlank
 	@Column(name = "nombre_usuario")
 	private String nombreUsuario;
+	@NotBlank
 	@Column(name = "password")
 	private String password;
 	@Column(name = "baja")
