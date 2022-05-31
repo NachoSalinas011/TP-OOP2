@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmls:th="https://thymeLeaf.org">
+
+<head th:replace="plantilla/template :: head">
+</head>
+
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+	<br>
+	<div class="container">
+		<table class="table">
+			<thead class="bg-dark text-white">
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Apellido</th>
+					<th scope="col">Tipo Doc</th>
+					<th scope="col">Nro Doc</th>
+					<th scope="col">Correo</th>
+					<th scope="col">Usuario</th>
+					<th scope="col">Perfil</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="us:${usuarios}">
+					<th scope="row" th:text="${us.idUsuario}"></th>
+					<td th:text="${us.nombre}"></td>
+					<td th:text="${us.apellido}"></td>
+					<td th:text="${us.tipoDoc}"></td>
+					<td th:text="${us.nroDoc}"></td>
+					<td th:text="${us.correo}"></td>
+					<td th:text="${us.nombreUsuario}"></td>
+					<td th:text="${us.perfil.nombrePerfil}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+
+	<div class="container">
+		<a class="btn btn-primary btn-sm" th:href="@{/views/usuarios/create}" th:text="'Crear usuario'"
+			title="Crear usuario">
+		</a>
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

@@ -21,7 +21,7 @@ public class PerfilServiceImplement implements IPerfilService {
 	}
 
 	@Override
-	public void eliminar(long id) {
+	public void eliminar(int id) {
 		perfilRepository.deleteById(id);
 	}
 	
@@ -31,7 +31,7 @@ public class PerfilServiceImplement implements IPerfilService {
 	}
 
 	@Override
-	public Perfil traer(long id) {
+	public Perfil traer(int id) {
 		return perfilRepository.findById(id).orElse(null);
 	}
 

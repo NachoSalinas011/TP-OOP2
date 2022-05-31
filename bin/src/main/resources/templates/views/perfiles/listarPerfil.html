@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmls:th="https://thymeLeaf.org">
+
+<head th:replace="plantilla/template :: head">
+</head>
+
+<body>
+<header th:replace="plantilla/template :: header"></header>
+<br>
+<div class="container">
+    <table class="table">
+        <thead class="bg-dark text-white">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Perfil</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pf:${perfiles}">
+            <th scope="row" th:text="${pf.id_perfil}"></th>
+            <td th:text="${pf.nombrePerfil}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container">
+    <a class="btn btn-primary btn-sm" th:href="@{/views/perfiles/create}" th:text="'Crear perfil'"
+       title="Crear perfil">
+    </a>
+</div>
+
+<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

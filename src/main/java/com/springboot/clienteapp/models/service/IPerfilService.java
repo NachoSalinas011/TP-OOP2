@@ -3,7 +3,6 @@ package com.springboot.clienteapp.models.service;
 import java.util.List;
 
 import com.springboot.clienteapp.models.entity.Perfil;
-import com.springboot.clienteapp.models.entity.Usuario;
 
 public interface IPerfilService {
 	
@@ -11,8 +10,8 @@ public interface IPerfilService {
 
 	public void agregar(Perfil perfil);
 
-	public void eliminar(long id);
+	public void eliminar(int id);
 
 
-	public Perfil traer(long id);
+	public Perfil traer(int id);
 }

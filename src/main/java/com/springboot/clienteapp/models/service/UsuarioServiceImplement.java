@@ -20,7 +20,7 @@ public class UsuarioServiceImplement implements IUsuarioService {
 	}
 
 	@Override
-	public void eliminar(long id) {
+	public void eliminar(int id) {
 		usuarioRepository.deleteById(id);
 
 	}
@@ -31,7 +31,7 @@ public class UsuarioServiceImplement implements IUsuarioService {
 	}
 
 	@Override
-	public Usuario traer(long id) {
+	public Usuario traer(int id) {
 		return usuarioRepository.findById(id).orElse(null);
 	}
 

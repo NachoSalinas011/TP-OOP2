@@ -9,10 +9,10 @@ public interface IUsuarioService {
 	
 	public void agregar(Usuario usuario);
 	
-	public void eliminar(long id);
+	public void eliminar(int id);
 	
 	public List<Usuario> traerListaUsuarios();
 	
-	public Usuario traer(long id);
+	public Usuario traer(int id);
 	
 }
