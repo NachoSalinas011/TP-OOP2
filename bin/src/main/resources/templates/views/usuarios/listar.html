@@ -6,21 +6,7 @@
 
 <body>
 	<header th:replace="plantilla/template :: header"></header>
-	<br>	
-	
-	<div class="container">
-		<a class="btn btn-primary btn-sm" th:href="@{/views/usuarios/create}" th:text="'Crear usuario'"
-			title="Crear usuario">
-		</a>
-		<a class="nav-link float-end" th:href="@{/views/usuarios/(format=pdf)}"
-       title="Exportar a PDF" target="_blank">
-        <img class="img-responsive center-box" th:src="@{/images/pdf.png}" height="40" width="40">
-    	</a>
-		
-	</div>
-		
-
-		
+	<br>
 	<div class="container">
 		<table class="table">
 			<thead class="bg-dark text-white">
@@ -64,7 +50,11 @@
 	</div>
 
 
-
+	<div class="container">
+		<a class="btn btn-primary btn-sm" th:href="@{/views/usuarios/create}" th:text="'Crear usuario'"
+			title="Crear usuario">
+		</a>
+	</div>
 
 	<footer th:replace="plantilla/template :: footer"></footer>
 </body>
