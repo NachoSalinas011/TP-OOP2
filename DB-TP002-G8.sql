@@ -1,34 +1,36 @@
-create database IF NOT EXISTS grupo_8_spring_db;
+create database IF NOT EXISTS grupo_8_spring_db_otra_rama;
 
-use grupo_8_spring_db;
+use grupo_8_spring_db_otra_rama;
 /*----------------------- Inicio Parte Usuario --------------------------*/
 
 CREATE TABLE `perfil` (
-  `id_perfil` int NOT NULL,
+  `id_perfil` int NOT NULL AUTO_INCREMENT,
   `perfil` varchar(45) NOT NULL,
-   `baja` bit(1) DEFAULT b'0',
+  `baja` bit(1) DEFAULT b'0',
   PRIMARY KEY (`id_perfil`)
 ) ;
 
+insert into perfil values (NULL, 'administrador', default);
+insert into perfil values (NULL, 'auditoria', default);
+select * from perfil;
+
 CREATE TABLE `usuario` (
   `id_usuario` int NOT NULL AUTO_INCREMENT,
-  `correo` varchar(45) NOT NULL,
-  `nombre_usuario` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `baja` bit(1) DEFAULT b'0',
   `nombre` varchar(45) NOT NULL,
   `apellido` varchar(45) NOT NULL,
   `tipo_doc` varchar(45) NOT NULL,
   `nro_doc` varchar(45) NOT NULL,
-  `id_perfil` int NOT NULL,
-  PRIMARY KEY (`id_usuario`),
-  CONSTRAINT `fk_usuario_1` FOREIGN KEY (`id_perfil`) 
-  REFERENCES `perfil` (`id_perfil`)
+  `correo` varchar(45) NOT NULL,
+  `nombre_usuario` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `baja` bit(1) DEFAULT b'0',
+  `perfil_id` int,
+  PRIMARY KEY (`id_usuario`,`perfil_id`),
+  KEY `fk_usuario_perfil_idx` (`perfil_id`),
+  CONSTRAINT `fk_usuario_perfil` FOREIGN KEY (`perfil_id`)
+  REFERENCES `perfil` (`id_perfil`) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
-INSERT INTO `perfil` VALUES 
-(1,'Administrador',0),
-(2,'Auditoria',0);
 
 /*----------------------- Fin Parte Usuario --------------------------*/
 

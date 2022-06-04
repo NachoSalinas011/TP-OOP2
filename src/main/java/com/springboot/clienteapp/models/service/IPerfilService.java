@@ -10,8 +10,8 @@ public interface IPerfilService {
 
 	public void agregar(Perfil perfil);
 
-	public void eliminar(int id);
+	public void eliminar(long id);
 
 
-	public Perfil traer(int id);
+	public Perfil traer(long id);
 }

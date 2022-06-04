@@ -5,33 +5,50 @@
 </head>
 
 <body>
-<header th:replace="plantilla/template :: header"></header>
-<br>
-<div class="container">
-    <table class="table">
-        <thead class="bg-dark text-white">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Perfil</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="pf:${perfiles}">
-            <th scope="row" th:text="${pf.id_perfil}"></th>
-            <td th:text="${pf.nombrePerfil}"></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+	<header th:replace="plantilla/template :: header"></header>
+	<br>
+	<div class="container">
+		<table class="table">
+			<thead class="bg-dark text-white">
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Perfil</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+			
+				<tr th:each="pf:${perfiles}">
+					<th scope="row" th:text="${pf.id_perfil}"></th>
+					<td th:text="${pf.nombrePerfil}"></td>
+					
+					<td>
+						<a class="btn btn-success btn-sm" th:href="@{/views/perfiles/edit/} + ${pf.id_perfil}"
+							th:text="'Editar'" title="Editar perfil">
+						</a>
+					</td>
+					
+					<td>
+						<a class="btn btn-danger btn-sm" th:href="@{/views/perfiles/delete/} + ${pf.id_perfil}"
+							th:text="'Eliminar'" title="Eliminar perfil"
+							onclick="return confirm('Seguro desea eliminar?')">
+						</a>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 
-<div class="container">
-    <a class="btn btn-primary btn-sm" th:href="@{/views/perfiles/create}" th:text="'Crear perfil'"
-       title="Crear perfil">
-    </a>
-</div>
+	<div class="container">
+		<a class="btn btn-primary btn-sm" th:href="@{/views/perfiles/create}" th:text="'Crear perfil'"
+			title="Crear perfil">
+		</a>
+	</div>
 
-<footer th:replace="plantilla/template :: footer"></footer>
+	<footer th:replace="plantilla/template :: footer"></footer>
 </body>
 
 </html>
