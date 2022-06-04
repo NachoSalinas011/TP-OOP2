@@ -77,7 +77,7 @@
 						<label for="perfil" class="col-md-2">Perfil</label>
 						<select th:field="*{perfil}" class="form-control form-control-sm col-md-6" id="perfil">
 							<option th:each="perfil:${perfiles}" th:value="${perfil.id_perfil}"
-								th:text="${perfil.perfil}"></option>
+								th:text="${perfil.nombrePerfil}"></option>
 						</select>
 					</div>
 

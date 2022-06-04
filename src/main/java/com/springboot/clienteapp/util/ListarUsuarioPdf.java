@@ -52,8 +52,8 @@ public class ListarUsuarioPdf extends AbstractPdfView{
         tablaTitulo.addCell(celda);
         tablaTitulo.setSpacingAfter(30);
         
-        PdfPTable tablaUsuario = new PdfPTable(10);
-        tablaUsuario.setWidths(new float[]{0.8f,2f,	2f,2f,2f,2f,2f,2f,2f,2f});
+        PdfPTable tablaUsuario = new PdfPTable(8);
+        tablaUsuario.setWidths(new float[]{0.8f,2f,	2f,2f,2f,2f,2f,2f});
         
         celda = new PdfPCell(new Phrase("ID",fuenteTituloColumnas));
         celda.setBackgroundColor(Color.lightGray);
