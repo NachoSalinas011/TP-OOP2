@@ -4,16 +4,18 @@
 <head th:fragment="head">
 	<meta charset="UTF-8" />
 	<title>UNLa</title>
-	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" </head>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
 
 <body>
 	<!--HEADER-->
 	<header th:fragment="header">
+	
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		
-			<div class="container">
+			<div class="container" style="margin-left: 0%">
 			
-				<a class="navbar-brand" href="#"><strong>Logo</strong></a>
+				<a class="navbar-brand" href="#"><img th:src="@{/img/UNLa.png}" width="30px"></a>
 				
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -25,7 +27,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/index}">Inicio</a>
+							<a class="nav-link active" aria-current="page" th:href="@{/home/index}">Inicio</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" th:href="@{/views/usuarios/}">Lista usuarios</a>
@@ -36,6 +38,12 @@
 						
 					</ul>
 				</div>
+				<div>
+					<form th:action="@{/logout}" method="post">
+						<input class="btn btn-success" style="cursor: pointer; ;margin-left:440%; background-color:#169277; color:white; letter-spacing:1px" type="submit" value="Cerrar sesión" />
+					</form>
+				</div>
+											
 			</div>
 		</nav>
 	</header>
@@ -49,7 +57,7 @@
 			<p>UNLa | OO2 | Grupo 8 </p>
 		</div>
 	
-		<script type="text/javascript" th:src="@{js/bootstrap.bundle.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
 	</footer>
 
 </body>

@@ -15,4 +15,6 @@ public interface IUsuarioService {
 	
 	public Usuario traer(long id);
 	
+	public Usuario findByCorreo(String correo);
+	
 }

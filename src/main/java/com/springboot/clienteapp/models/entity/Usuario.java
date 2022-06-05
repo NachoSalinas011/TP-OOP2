@@ -39,7 +39,7 @@ public class Usuario implements Serializable {
 	private boolean baja;
 
 	@OneToOne
-	@JoinColumn(name = "perfil_id")
+	@JoinColumn(name = "id_perfil")
 	private Perfil perfil;
 
 	// _____________________________________________________________

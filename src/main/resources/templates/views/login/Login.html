@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmls:th="https://thymeLeaf.org">
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="Stylesheet" th:href="@{/css/custom.css}">
+</head>
+
+<body id="login">
+	<header th:replace="plantilla/template :: header"></header>
+	
+	<div class="fondo">
+	</div>
+	<div class="formLogin" >
+		<form method="post" th:action="@{/loginprocess}">
+			<div class="form-group" style="margin: 2% 2% 2% 2%">
+				<H1 style="color:#921631">Iniciar sesión</H1>
+	
+				<label for="username" class="form-group" style="color: #921631">Usuario</label>
+				<input type="email" required="required" class="form-control" name="username" id="username" placeholder="Correo" style="width:30%;" />
+				
+				<label for="password" class="form-group" style="margin-top:1%;color: #921631">Password</label>
+				<input type="password" required="required" autocomplete="off" class="form-control" name="password" id="password" placeholder="Password" style="width: 30%;" />
+				
+				<button style="margin-top:2%; background-color:#169277; color:white; letter-spacing:1px" type="submit" class="btn btn">Ingresar</button>
+			</div>
+	
+		</form>
+	  	<div th:if="${error != null}" style="width: 50%;" class="alert alert-danger">
+			Usuario o contraseña incorrectos
+		</div>
+	</div>
+	
+	
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

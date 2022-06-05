@@ -7,5 +7,6 @@ import com.springboot.clienteapp.models.entity.Usuario;
 
 @Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
-
+	
+	Usuario findByCorreo(String correo);
 }
