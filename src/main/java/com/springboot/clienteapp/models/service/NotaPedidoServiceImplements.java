@@ -24,4 +24,10 @@ public class NotaPedidoServiceImplements implements INotaPedidoService {
 		return pedidoRepo.findById(id).orElse(null);
 	}
 
+	@Override
+	public void agregar(NotaPedido notaPedido) {
+		pedidoRepo.save(notaPedido);
+		
+	}
+
 }

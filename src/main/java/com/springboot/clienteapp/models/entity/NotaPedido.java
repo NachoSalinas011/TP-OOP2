@@ -1,6 +1,7 @@
 package com.springboot.clienteapp.models.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +23,7 @@ public class NotaPedido implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id_nota;
+	private LocalDate fecha;
 	private char turno;
 	private int cant_estudiantes;
 	private String observaciones;
@@ -45,6 +47,14 @@ public class NotaPedido implements Serializable{
 
 	public void setId_nota(int id_nota) {
 		this.id_nota = id_nota;
+	}
+
+	public LocalDate getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
 	}
 
 	public char getTurno() {

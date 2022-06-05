@@ -131,11 +131,12 @@ CREATE table `carrera` (
 );
 
 CREATE table `materia` (
+	`id_materia` int not null auto_increment,
 	`cod_materia` varchar(10) not null,
     `materia` varchar(75) not null,
     `id_carrera` int not null,
     `profesor` varchar(75) not null,
-    PRIMARY KEY (`cod_materia`),
+    PRIMARY KEY (`id_materia`),
     KEY `fk_materia_idx` (`id_carrera`),
     CONSTRAINT `fk_materia` FOREIGN KEY (`id_carrera`)
     REFERENCES `carrera` (`id_carrera`)
@@ -143,15 +144,16 @@ CREATE table `materia` (
 
 CREATE table `nota_pedido` (
 	`id_nota` int not null auto_increment,
+    `fecha` date NOT NULL,
     `turno` char(1) not null,
     `cant_estudiantes` int not null,
-    `cod_materia` varchar (10) not null,
+    `id_materia` int not null,
     `observaciones` varchar(200),
     `id_aula` int not null,
     PRIMARY KEY (`id_nota`),
 	KEY `fk_nota_pedido_idx` (`id_nota`),
-    CONSTRAINT `fk_nota_pedido_materia` FOREIGN KEY (`cod_materia`)
-    REFERENCES `materia` (`cod_materia`),
+    CONSTRAINT `fk_nota_pedido_materia` FOREIGN KEY (`id_materia`)
+    REFERENCES `materia` (`id_materia`),
     CONSTRAINT `fk_nota_pedido_aula` FOREIGN KEY (`id_aula`)
     REFERENCES `aula` (`id_aula`)
 );
@@ -177,10 +179,12 @@ INSERT INTO `carrera` VALUE
  (1, 'Licenciatura en Sistemas',1);
  
 INSERT INTO `materia` VALUES
- ('8600','Programacion de Computadoras', 1, 'Nicolas Perez'),
- ('8616','Orientacion a Objetos 2',1, 'Alejandra Vranic, Gustavo Siciliano'),
- ('8603-4','Matematica 1',1, 'Luis Millan'),
- ('8603-3','Matematica 1',1, 'Vanesa Plaul');
+ (NULL, '8600','Programacion de Computadoras', 1, 'Nicolas Perez'),
+ (NULL, '8616','Orientacion a Objetos 2',1, 'Alejandra Vranic, Gustavo Siciliano'),
+ (NULL, '8603-4','Matematica 1',1, 'Luis Millan'),
+ (NULL, '8603-3','Matematica 1',1, 'Vanesa Plaul');
+ 
+ select * from materia;
 
 /*----------------------- Fin Parte Pedido --------------------------*/
 
