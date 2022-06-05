@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmls:th="https://thymeLeaf.org">
+
+<head th:replace="plantilla/template :: head">
+</head>
+
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+		<br>
+		<div class="card bg-light">
+
+			<div class="card-header bg-dark text-white" th:text="${titulo}">
+				<h1>Crear Nota Pedido</h1>
+			</div>
+
+
+			<div class="card-body">
+				<form th:action="@{/views/pedidos/save}" th:object="${notaPedido}" method="post">
+
+
+					<div class="form-group row">
+						<label for="materia" class="col-md-2">Materia</label>
+						<select th:field="*{materia}" class="form-control form-control-sm col-md-6" id="materia">
+							<option th:each="materia:${materias}" th:value="${materia.id_materia}"
+								th:text="${materia.materia_nombre}"></option>
+						</select>
+					</div>
+
+					<br>
+
+					<div class="card-footer bg-dark text-center">
+
+						<input type="submit" class="btn btn-primary btn-sm" value="Crear">
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

@@ -3,7 +3,6 @@ package com.springboot.clienteapp.models.service;
 import java.util.List;
 
 import com.springboot.clienteapp.models.entity.Perfil;
-import com.springboot.clienteapp.models.entity.Usuario;
 
 public interface IPerfilService {
 	
