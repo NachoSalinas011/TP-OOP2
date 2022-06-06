@@ -24,7 +24,7 @@ CREATE TABLE `usuario` (
   `nombre_usuario` varchar(45) NOT NULL,
   `password` text NOT NULL,
   `baja` bit(1) DEFAULT b'0',
-  `id_perfil` int,
+  `perfil_id` int,
   PRIMARY KEY (`id_usuario`,`perfil_id`),
   KEY `fk_usuario_perfil_idx` (`perfil_id`),
   CONSTRAINT `fk_usuario_perfil` FOREIGN KEY (`perfil_id`)
