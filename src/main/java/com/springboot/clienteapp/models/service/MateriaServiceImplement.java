@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.clienteapp.models.entity.Departamento;
 import com.springboot.clienteapp.models.entity.Materia;
-import com.springboot.clienteapp.models.repository.DepartamentoRepository;
 import com.springboot.clienteapp.models.repository.MateriaRepository;
 
 @Service

@@ -27,6 +27,14 @@
 								th:text="${materia.materia_nombre}"></option>
 						</select>
 					</div>
+					
+					<!--<div class="form-group row">
+						<label for="carrera" class="col-md-2">Carrera</label>
+						<select th:field="*{carrera}" class="form-control form-control-sm col-md-6" id="carrera">
+							<option th:each="carrera:${carreras}" th:value="${materia.id_carrera}"
+								th:text="${materia.carrera.carrera_nombre}"></option>
+						</select>
+					</div>-->
 
 					<br>
 
