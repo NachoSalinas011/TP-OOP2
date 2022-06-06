@@ -21,11 +21,11 @@ public class LoginController {
 	
 	@GetMapping("/logedin")
 	public String loginCheck() {
-		return "redirect:/home/index";
+		return "redirect:/index/";
 	}
 	
 	@GetMapping("/logout")
 	public String logout(Model model) {
-		return "views/login/logout";
+		return "views/login/login";
 	}
 }

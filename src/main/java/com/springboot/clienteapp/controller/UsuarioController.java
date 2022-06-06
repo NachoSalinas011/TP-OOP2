@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,7 +31,7 @@ public class UsuarioController {
 	
 	@GetMapping("/")
 	public String listarUsuarios(Model model) {
-		List<Usuario> listaUsuarios = usuarioService.traerListaUsuarios();
+		List<Usuario> listaUsuarios = usuarioService.traerListaUsuarios();		
 		
 		model.addAttribute("titulo", "Lista de usuarios");
 		model.addAttribute("usuarios", listaUsuarios);

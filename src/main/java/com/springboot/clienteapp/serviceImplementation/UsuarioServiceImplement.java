@@ -19,6 +19,8 @@ public class UsuarioServiceImplement implements IUsuarioService {
 	
 	@Override
 	public void agregar(Usuario usuario) {
+		BCryptPasswordEncoder pe = new BCryptPasswordEncoder(); //encodeo de password
+		usuario.setPassword(pe.encode(usuario.getPassword()));
 		usuarioRepository.save(usuario);
 	}
 

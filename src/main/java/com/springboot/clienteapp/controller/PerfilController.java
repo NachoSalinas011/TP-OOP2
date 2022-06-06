@@ -4,6 +4,7 @@ import com.springboot.clienteapp.models.entity.Perfil;
 import com.springboot.clienteapp.models.entity.Usuario;
 import com.springboot.clienteapp.models.service.IPerfilService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

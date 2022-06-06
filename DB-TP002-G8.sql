@@ -1,6 +1,6 @@
-create database IF NOT EXISTS grupo_8_spring_db_otra_rama;
+create database IF NOT EXISTS grupo_8_spring_db;
 
-use grupo_8_spring_db_otra_rama;
+use grupo_8_spring_db;
 /*----------------------- Inicio Parte Usuario --------------------------*/
 
 CREATE TABLE `perfil` (
@@ -24,7 +24,7 @@ CREATE TABLE `usuario` (
   `nombre_usuario` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `baja` bit(1) DEFAULT b'0',
-  `perfil_id` int,
+  `id_perfil` int,
   PRIMARY KEY (`id_usuario`,`perfil_id`),
   KEY `fk_usuario_perfil_idx` (`perfil_id`),
   CONSTRAINT `fk_usuario_perfil` FOREIGN KEY (`perfil_id`)
