@@ -52,7 +52,7 @@ public class Usuario implements Serializable {
 	private boolean baja;
 
 	@OneToOne
-	@JoinColumn(name = "id_perfil")
+	@JoinColumn(name = "perfil_id")
 	private Perfil perfil;
 
 	// _____________________________________________________________

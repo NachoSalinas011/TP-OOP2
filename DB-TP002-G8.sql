@@ -22,7 +22,7 @@ CREATE TABLE `usuario` (
   `nro_doc` varchar(45) NOT NULL,
   `correo` varchar(45) NOT NULL,
   `nombre_usuario` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` text NOT NULL,
   `baja` bit(1) DEFAULT b'0',
   `id_perfil` int,
   PRIMARY KEY (`id_usuario`,`perfil_id`),
@@ -173,18 +173,24 @@ CREATE table `curso` (
 );
 
 INSERT INTO `departamento` VALUE
- (1, 'Desarrollo Productivo y Tecnologico');
+ (1, 'Desarrollo Productivo y Tecnologico'),
+ (2, 'Departamento de Salud Comunitaria');
  
 INSERT INTO `carrera` VALUE
- (1, 'Licenciatura en Sistemas',1);
+ (1, 'Licenciatura en Sistemas',1),
+ (2, 'Nutricion',2);
  
 INSERT INTO `materia` VALUES
  (NULL, '8600','Programacion de Computadoras', 1, 'Nicolas Perez'),
  (NULL, '8616','Orientacion a Objetos 2',1, 'Alejandra Vranic, Gustavo Siciliano'),
  (NULL, '8603-4','Matematica 1',1, 'Luis Millan'),
- (NULL, '8603-3','Matematica 1',1, 'Vanesa Plaul');
+ (NULL, '8603-3','Matematica 1',1, 'Vanesa Plaul'),
+ (NULL, '01','Salud Colectiva',2, '');
  
  select * from materia;
+ select * from carrera;
+ select * from departamento;
+ select * from usuario;
 
 /*----------------------- Fin Parte Pedido --------------------------*/
 
