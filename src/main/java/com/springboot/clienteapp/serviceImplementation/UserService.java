@@ -37,8 +37,8 @@ public class UserService implements UserDetailsService{
 	}
 	
 	private List<GrantedAuthority> buildGrantedAuthorities(Perfil perfil) {
-		Set<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
-		grantedAuthorities.add(new SimpleGrantedAuthority(perfil.getNombrePerfil()));
-		return new ArrayList<GrantedAuthority>(grantedAuthorities);
+		Set<GrantedAuthority> roles = new HashSet<GrantedAuthority>();
+		roles.add(new SimpleGrantedAuthority(perfil.getNombrePerfil()));
+		return new ArrayList<GrantedAuthority>(roles);
 	}
 }
