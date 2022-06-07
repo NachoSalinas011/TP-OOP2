@@ -30,15 +30,15 @@ class TestAgregarUsuario {
 		
 		long idUsuario = 3;
 		user.setIdUsuario(idUsuario);
+
 		user.setNombre("Fede");
 		user.setApellido("Frumbo");
 		user.setCorreo("f@gmail.com.ar");
 		user.setNombreUsuario("f");
 		user.setPerfil(rol);
 		user.setTipoDoc("DNI");
-		user.setNroDoc("36821884");
-		
-		user.setPassword(pe.encode("a123"));
+		user.setNroDoc("36821884");	
+		user.setPassword("123");
 		
 		usuarioService.agregar(user);
 	}

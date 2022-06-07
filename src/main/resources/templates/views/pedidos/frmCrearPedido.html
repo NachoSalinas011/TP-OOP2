@@ -19,6 +19,29 @@
 			<div class="card-body">
 				<form th:action="@{/views/pedidos/save}" th:object="${notaPedido}" method="post">
 
+					<div class="form-group row">
+						<input type="hidden" th:field="*{id_nota}">
+						<label for="fecha" class="col-md-2">Fecha</label>
+						<input type="date" th:field="*{fecha}" class="form-control form-control-sm col-md-6" id="fecha"
+							placeholder="Fecha">
+					</div>
+
+					<div class="form-group row">
+						<label for="turno" class="col-md-2">Turno</label>
+						<select th:field="*{turno}" id="turno">
+							<option value="m">Mañana</option>
+							<option value="t">Tarde</option>
+							<option value="n">Noche</option>			
+						</select>
+						<!--<input type="text" th:field="*{turno}" class="form-control form-control-sm col-md-6"
+							id="turno" placeholder="Turno">-->
+					</div>
+					
+					<div class="form-group row">
+						<label for="cant_estudiantes" class="col-md-2">Cantidad estudiantes</label>
+						<input type="number" th:field="*{cant_estudiantes}" class="form-control form-control-sm col-md-6"
+							id="cant_estudiantes" placeholder="Cantidad estudiantes">
+					</div>
 
 					<div class="form-group row">
 						<label for="materia" class="col-md-2">Materia</label>
@@ -27,15 +50,21 @@
 								th:text="${materia.materia_nombre}"></option>
 						</select>
 					</div>
-					
-					<!--<div class="form-group row">
-						<label for="carrera" class="col-md-2">Carrera</label>
-						<select th:field="*{carrera}" class="form-control form-control-sm col-md-6" id="carrera">
-							<option th:each="carrera:${carreras}" th:value="${materia.id_carrera}"
-								th:text="${materia.carrera.carrera_nombre}"></option>
-						</select>
-					</div>-->
 
+					<div class="form-group row">
+						<label for="observaciones" class="col-md-2">Observaciones</label>
+						<input type="text" th:field="*{observaciones}" class="form-control form-control-sm col-md-6"
+							id="observaciones" placeholder="Observaciones">
+					</div>
+
+					<div class="form-group row">
+						<label for="aula" class="col-md-2">Aula</label>
+						<select th:field="*{aula}" class="form-control form-control-sm col-md-6" id="aula">
+							<option th:each="aula:${aulas}" th:value="${aula.id_aula}"
+								th:text="${aula.numero}"></option>
+						</select>
+					</div>
+					
 					<br>
 
 					<div class="card-footer bg-dark text-center">
