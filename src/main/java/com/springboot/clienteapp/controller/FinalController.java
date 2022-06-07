@@ -13,20 +13,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.springboot.clienteapp.models.entity.Aula;
-import com.springboot.clienteapp.models.entity.Carrera;
+import com.springboot.clienteapp.models.entity.Final;
 import com.springboot.clienteapp.models.entity.Materia;
-import com.springboot.clienteapp.models.entity.NotaPedido;
 import com.springboot.clienteapp.models.service.IAulaService;
-import com.springboot.clienteapp.models.service.ICarreraService;
+import com.springboot.clienteapp.models.service.IFinalService;
 import com.springboot.clienteapp.models.service.IMateriaService;
-import com.springboot.clienteapp.models.service.INotaPedidoService;
 
 @Controller
 @RequestMapping("/views/pedidos")
-public class NotaPedidoController {
-	/*
+public class FinalController {
+	
 	@Autowired
-	private INotaPedidoService NotaPedidoService;
+	private IFinalService finalService;
 	
 	@Autowired
 	private IMateriaService materiaService;
@@ -36,29 +34,29 @@ public class NotaPedidoController {
 	
 	@GetMapping("/create")
 	public String crear(Model model) {
-		NotaPedido notaPedido = new NotaPedido();
+		Final f = new Final();
 		List<Materia> listaMaterias = materiaService.traerListaMaterias();
 		List<Aula> listaAulas = aulaService.traerListaAulas();
-		model.addAttribute("titulo", "Formulario: Nueva nota pedido");
-		model.addAttribute("notaPedido", notaPedido);
+		model.addAttribute("titulo", "Formulario: Nueva nota pedido Final");
+		model.addAttribute("final", f);
 		model.addAttribute("materias", listaMaterias);
 		model.addAttribute("aulas", listaAulas);
-		return "/views/pedidos/frmCrearPedido";
+		return "/views/pedidos/frmCrearFinal";
 	}
 	
 	@PostMapping("/save")
-	public String guardarNotaPedido(@Valid @ModelAttribute NotaPedido notaPedido, BindingResult result, Model model) {
+	public String guardarNotaPedido(@Valid @ModelAttribute Final f, BindingResult result, Model model) {
 		List<Materia> listaMaterias = materiaService.traerListaMaterias();
 		List<Aula> listaAulas = aulaService.traerListaAulas();
-		/*
+		
 		if(result.hasErrors()) {		
-			model.addAttribute("titulo", "Formulario: Nueva notaaaa pedido");
-			model.addAttribute("notaPedido", notaPedido);
-			model.addAttribute("materias", listaMaterias);
-			model.addAttribute("aulas", listaAulas);
-			return "/views/pedidos/frmCrearPedido";
-		}	*/
-		/*NotaPedidoService.agregar(notaPedido);
-		return "redirect:/views/pedidos/";
-	}*/
+			model.addAttribute("titulo", "Formulario: Nueva nota pedido Final2");
+		model.addAttribute("final", f);
+		model.addAttribute("materias", listaMaterias);
+		model.addAttribute("aulas", listaAulas);
+		return "/views/pedidos/frmCrearFinal";
+		}	
+		finalService.agregar(f);
+		return "redirect:/views/pedidos/frmCrearFinal";
+	}
 }
