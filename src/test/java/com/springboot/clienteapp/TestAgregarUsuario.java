@@ -34,11 +34,10 @@ class TestAgregarUsuario {
 		user.setApellido("Salinas");
 		user.setCorreo("nachosalinas@live.com.ar");
 		user.setNombreUsuario("nisali");
-		user.setPerfil(rol);;
+		user.setPerfil(rol);
 		user.setTipoDoc("DNI");
 		user.setNroDoc("42284321");
-		
-		user.setPassword(pe.encode("1234"));
+		user.setPassword("1234");
 		
 		usuarioService.agregar(user);
 	}
