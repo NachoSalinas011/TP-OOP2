@@ -38,9 +38,7 @@ public class NotaPedido implements Serializable{
 	@JoinColumn(name = "id_aula")
 	private Aula aula;
 	
-	public NotaPedido () {
-		
-	}
+	public NotaPedido () {}
 
 	public int getId_nota() {
 		return id_nota;

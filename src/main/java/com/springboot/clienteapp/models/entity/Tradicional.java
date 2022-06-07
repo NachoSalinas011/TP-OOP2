@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Tradicional extends Aula implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
 	private int cant_bancos;
 	private String pizarron;
 	private boolean tiene_proyector;

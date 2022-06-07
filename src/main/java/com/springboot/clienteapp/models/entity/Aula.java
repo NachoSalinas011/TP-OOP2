@@ -21,17 +21,14 @@ public class Aula implements Serializable{
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int id_aula;
-	private int numero;
+	protected int id_aula;
+	protected int numero;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_edificio")
 	private Edificio edificio;
 	
-	public Aula ()
-	{
-		
-	}
+	public Aula (){}
 
 	public int getId_aula() {
 		return id_aula;

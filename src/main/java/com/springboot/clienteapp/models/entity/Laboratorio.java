@@ -20,6 +20,7 @@ public class Laboratorio extends Aula implements Serializable{
 	private int cant_PC;
 	private int cant_sillas;
 	
+	
 	public int getCant_PC() {
 		return cant_PC;
 	}
@@ -36,6 +37,8 @@ public class Laboratorio extends Aula implements Serializable{
 	public String toString() {
 		return "Laboratorio [cant_PC=" + cant_PC + ", cant_sillas=" + cant_sillas + "]";
 	}
+	
+	
 	
 	
 	
