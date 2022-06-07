@@ -12,8 +12,11 @@ public interface IEspacioService {
 	
 	public Espacio traerEspacio(int id);
 	
-	public void agregarEspacio (LocalDate fecha, char turno, Aula aula, boolean libre);
-	
-	public void agregarEspacioMes(int mes, int anio, char turno, Aula aula);
+	/*
+	 * public void agregarEspacio (LocalDate fecha, char turno, Aula aula, boolean
+	 * libre);
+	 * 
+	 * public void agregarEspacioMes(int mes, int anio, char turno, Aula aula);
+	 */
 	
 }

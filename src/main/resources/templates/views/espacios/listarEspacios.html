@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmls:th="https://thymeLeaf.org">
+
+<head th:replace="plantilla/template :: head">
+</head>
+
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+	<br>	
+			
+	<div class="container">
+		<table class="table">
+			<thead class="bg-dark text-white">
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Fecha</th>
+					<th scope="col">Turno</th>
+					<th scope="col">Aula</th>
+					<th scope="col">Edificio</th>
+					<th scope="col">Libre</th>
+				<!--	<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>-->
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="e:${listaEspacios}">
+					<th scope="row" th:text="${e.id_espacio}"></th>
+					<td th:text="${e.fecha}"></td>
+					<td th:text="${e.turno}"></td>
+					<td th:text="${e.aula.numero}"></td>
+					<td th:text="${e.aula.edificio.edificio}"></td>
+					<td th:text="${e.libre}"></td>
+					
+					<!--<td>
+						<a class="btn btn-success btn-sm" th:href="@{/views/usuarios/edit/} + ${us.idUsuario}"
+							th:text="'Editar'" title="Editar usuario">
+						</a>
+					</td>
+					<td>
+						<a class="btn btn-danger btn-sm" th:href="@{/views/usuarios/delete/} + ${us.idUsuario}"
+							th:text="'Eliminar'" title="Eliminar usuario" onclick="return confirm('Seguro desea eliminar?')">
+						</a>
+					</td>-->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

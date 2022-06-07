@@ -26,16 +26,16 @@ public class EspacioServiceImplement implements IEspacioService {
 		return espacioRep.findById(id).orElse(null);
 	}
 
-	@Override
-	public void agregarEspacio(LocalDate fecha, char turno, Aula aula, boolean libre) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void agregarEspacioMes(int mes, int anio, char turno, Aula aula) {
-		// TODO Auto-generated method stub
-
-	}
+	/*
+	 * @Override public void agregarEspacio(LocalDate fecha, char turno, Aula aula,
+	 * boolean libre) { // TODO Auto-generated method stub
+	 * 
+	 * }
+	 * 
+	 * @Override public void agregarEspacioMes(int mes, int anio, char turno, Aula
+	 * aula) { // TODO Auto-generated method stub
+	 * 
+	 * }
+	 */
 
 }

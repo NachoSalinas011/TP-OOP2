@@ -1,13 +1,16 @@
 package com.springboot.clienteapp.models.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,10 +22,15 @@ public class Espacio implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id_espacio;
-	private LocalDate fecha;
+	
+	@Column(name = "fecha")
+	private Date fecha;
+	@Column(name = "libre")
 	private boolean libre;
+	@Column(name = "turno")
 	private char turno;
 	
+	@OneToOne
 	@JoinColumn (name = "id_aula")
 	private Aula aula;
 
@@ -34,11 +42,11 @@ public class Espacio implements Serializable{
 		this.id_espacio = id_espacio;
 	}
 
-	public LocalDate getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(LocalDate fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 

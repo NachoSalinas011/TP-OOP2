@@ -191,6 +191,13 @@ INSERT INTO `materia` VALUES
  select * from carrera;
  select * from departamento;
  select * from usuario;
+  select * from edificio;
+ select * from aula;
+ select * from espacio;
+ 
+ select * from nota_pedido;
+select * from curso;
+ select * from final;
 
 /*----------------------- Fin Parte Pedido --------------------------*/
 
