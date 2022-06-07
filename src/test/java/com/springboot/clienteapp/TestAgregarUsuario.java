@@ -28,17 +28,17 @@ class TestAgregarUsuario {
 		
 		Perfil rol = perfilService.traer(1);
 		
-		long idUsuario = 1;
+		long idUsuario = 3;
 		user.setIdUsuario(idUsuario);
-		user.setNombre("Nicolás");
-		user.setApellido("Salinas");
-		user.setCorreo("nachosalinas@live.com.ar");
-		user.setNombreUsuario("nisali");
-		user.setPerfil(rol);;
+		user.setNombre("Fede");
+		user.setApellido("Frumbo");
+		user.setCorreo("f@gmail.com.ar");
+		user.setNombreUsuario("f");
+		user.setPerfil(rol);
 		user.setTipoDoc("DNI");
-		user.setNroDoc("42284321");
+		user.setNroDoc("36821884");
 		
-		user.setPassword(pe.encode("1234"));
+		user.setPassword(pe.encode("a123"));
 		
 		usuarioService.agregar(user);
 	}
