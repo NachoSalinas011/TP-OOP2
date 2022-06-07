@@ -26,6 +26,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers("/css/*", "/img/*", "/js/*", "/css/bootstrap/*", "/favicon.ico").permitAll()
+				.antMatchers("/views/*/create",
+							"/views/*/save",
+							"/views/*/edit/*",
+							"/views/*/delete/*")
+				.hasAuthority("administrador")
 				.anyRequest().authenticated()
 			.and()
 				.formLogin().loginPage("/login").loginProcessingUrl("/loginprocess")
