@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmls:th="https://thymeLeaf.org">
+
+<head th:replace="plantilla/template :: head">
+</head>
+
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+	<br>	
+			
+	<div class="container">
+		<table class="table">
+			<thead class="bg-dark text-white">
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Fecha</th>
+					<th scope="col">Turno</th>
+					<th scope="col">Cant Estudiantes</th>
+					<th scope="col">Materia</th>
+					<th scope="col">Profesor</th>
+					<th scope="col">Carrera</th>
+					<th scope="col">Observaciones</th>
+					<th scope="col">Aula</th>
+					<th scope="col">Edificio</th>
+					<th scope="col">Codigo Curso</th>
+				<!--	<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>-->
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="c:${pedidosCurso}">
+					<th scope="row" th:text="${c.id_nota}"></th>
+					<td th:text="${c.fecha}"></td>
+					<td th:text="${c.turno}"></td>
+					<td th:text="${c.cant_estudiantes}"></td>
+					<td th:text="${c.materia.materia_nombre}"></td>
+					<td th:text="${c.materia.profesor}"></td>
+					<td th:text="${c.materia.carrera.carrera_nombre}"></td>
+					<td th:text="${c.observaciones}"></td>
+					<td th:text="${c.aula.numero}"></td>
+					<td th:text="${c.aula.edificio.edificio}"></td>
+					<td th:text="${c.cod_curso}"></td>
+					
+					<!--<td>
+						<a class="btn btn-success btn-sm" th:href="@{/views/usuarios/edit/} + ${us.idUsuario}"
+							th:text="'Editar'" title="Editar usuario">
+						</a>
+					</td>
+					<td>
+						<a class="btn btn-danger btn-sm" th:href="@{/views/usuarios/delete/} + ${us.idUsuario}"
+							th:text="'Eliminar'" title="Eliminar usuario" onclick="return confirm('Seguro desea eliminar?')">
+						</a>
+					</td>-->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

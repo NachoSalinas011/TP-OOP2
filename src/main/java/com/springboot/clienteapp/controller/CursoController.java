@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.springboot.clienteapp.models.entity.Aula;
 import com.springboot.clienteapp.models.entity.Curso;
+import com.springboot.clienteapp.models.entity.Final;
 import com.springboot.clienteapp.models.entity.Materia;
 import com.springboot.clienteapp.models.service.IAulaService;
 import com.springboot.clienteapp.models.service.ICursoService;
@@ -31,6 +32,16 @@ public class CursoController {
 	
 	@Autowired
 	private IAulaService aulaService;
+	
+	@GetMapping("/")
+	public String listarPedidosFinal(Model model) {
+		List<Curso> listaPedidosCurso = cursoService.listaPedidosCurso();		
+		
+		model.addAttribute("titulo", "Lista de pedidos Curso");
+		model.addAttribute("pedidosCurso", listaPedidosCurso);
+		
+		return "/views/pedidos/listarSolicitudesCurso";
+	}
 	
 	@GetMapping("/create")
 	public String crear(Model model) {
