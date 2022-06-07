@@ -9,14 +9,18 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.springboot.clienteapp.models.entity.Aula;
+import com.springboot.clienteapp.models.entity.Espacio;
 import com.springboot.clienteapp.models.entity.Final;
 import com.springboot.clienteapp.models.entity.Materia;
+import com.springboot.clienteapp.models.entity.Perfil;
 import com.springboot.clienteapp.models.entity.Usuario;
 import com.springboot.clienteapp.models.service.IAulaService;
+import com.springboot.clienteapp.models.service.IEspacioService;
 import com.springboot.clienteapp.models.service.IFinalService;
 import com.springboot.clienteapp.models.service.IMateriaService;
 
@@ -32,6 +36,9 @@ public class FinalController {
 	
 	@Autowired
 	private IAulaService aulaService;
+	
+	@Autowired
+	private IEspacioService espacioService;
 	
 	@GetMapping("/")
 	public String listarPedidosFinal(Model model) {
@@ -70,4 +77,16 @@ public class FinalController {
 		finalService.agregar(f);
 		return "redirect:/views/pedidos/frmCrearFinal";
 	}
+	
+	
+	@GetMapping("/reserve/{id_nota}")
+	public String editar(@PathVariable("id_nota") int id, Model model) {
+		Final f = finalService.traerPedidoFinal(id);
+		Espacio espacio = new Espacio(f.getFecha(), false, f.getTurno(), f.getAula());
+		finalService.eliminar(id);
+		espacioService.agregar(espacio);
+		return "redirect:/views/espacios/";
+	}
+	
+	
 }

@@ -34,6 +34,20 @@ public class Espacio implements Serializable{
 	@JoinColumn (name = "id_aula")
 	private Aula aula;
 
+	
+	
+	public Espacio() {
+		super();
+	}
+
+	public Espacio(Date fecha, boolean libre, char turno, Aula aula) {
+		super();
+		this.fecha = fecha;
+		this.libre = libre;
+		this.turno = turno;
+		this.aula = aula;
+	}
+
 	public int getId_espacio() {
 		return id_espacio;
 	}

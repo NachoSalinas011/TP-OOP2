@@ -30,4 +30,10 @@ public class FinalServiceImplement implements IFinalService {
 
 	}
 
+	@Override
+	public void eliminar(long id) {
+		finalRepo.deleteById((int) id);
+		
+	}
+
 }

@@ -10,4 +10,6 @@ public interface IFinalService {
 	public Final traerPedidoFinal(int id);
 
 	public void agregar(Final pedidoFinal);
+	
+	public void eliminar(long id);
 }

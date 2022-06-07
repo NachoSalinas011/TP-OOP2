@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.springboot.clienteapp.models.entity.Aula;
 import com.springboot.clienteapp.models.entity.Espacio;
+import com.springboot.clienteapp.models.entity.Usuario;
 
 public interface IEspacioService {
 
@@ -12,6 +13,9 @@ public interface IEspacioService {
 	
 	public Espacio traerEspacio(int id);
 	
+	public void agregar(Espacio espacio);
+	
+	public void eliminar(long id);
 	/*
 	 * public void agregarEspacio (LocalDate fecha, char turno, Aula aula, boolean
 	 * libre);

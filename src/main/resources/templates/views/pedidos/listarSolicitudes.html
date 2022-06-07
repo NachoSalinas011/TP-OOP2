@@ -23,8 +23,7 @@
 					<th scope="col">Aula</th>
 					<th scope="col">Edificio</th>
 					<th scope="col">Fecha Examen</th>
-				<!--	<th scope="col">Editar</th>
-					<th scope="col">Eliminar</th>-->
+					<th scope="col">Reservar Espacio</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,16 +40,13 @@
 					<td th:text="${f.aula.edificio.edificio}"></td>
 					<td th:text="${f.fecha_examen}"></td>
 					
-					<!--<td>
-						<a class="btn btn-success btn-sm" th:href="@{/views/usuarios/edit/} + ${us.idUsuario}"
-							th:text="'Editar'" title="Editar usuario">
+					<td>
+						<a class="btn btn-success btn-sm" th:href="@{/views/pedidos/reserve/} + ${f.id_nota}"
+							th:text="'Aprobar'" title="Aprobar solicitud"
+							onclick="return confirm('Desea aprobar esta solicitud?')">
 						</a>
 					</td>
-					<td>
-						<a class="btn btn-danger btn-sm" th:href="@{/views/usuarios/delete/} + ${us.idUsuario}"
-							th:text="'Eliminar'" title="Eliminar usuario" onclick="return confirm('Seguro desea eliminar?')">
-						</a>
-					</td>-->
+					
 				</tr>
 			</tbody>
 		</table>

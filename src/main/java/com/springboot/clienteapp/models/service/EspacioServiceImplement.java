@@ -15,7 +15,7 @@ public class EspacioServiceImplement implements IEspacioService {
 
 	@Autowired
 	private EspacioRepository espacioRep;
-	
+
 	@Override
 	public List<Espacio> traerListaEspacio() {
 		return (List<Espacio>) espacioRep.findAll();
@@ -24,6 +24,15 @@ public class EspacioServiceImplement implements IEspacioService {
 	@Override
 	public Espacio traerEspacio(int id) {
 		return espacioRep.findById(id).orElse(null);
+	}
+
+	public void agregar(Espacio espacio) {
+		espacioRep.save(espacio);
+		
+	}
+
+	public void eliminar(long id) {
+		espacioRep.deleteById((int) id);
 	}
 
 	/*
