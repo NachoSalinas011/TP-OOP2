@@ -31,4 +31,10 @@ public class CursoServiceImplement implements ICursoService {
 
 	}
 
+	@Override
+	public void eliminar(long id) {
+		cursoRepo.deleteById((int) id);
+		
+	}
+
 }

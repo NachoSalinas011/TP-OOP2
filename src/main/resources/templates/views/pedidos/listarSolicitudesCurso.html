@@ -6,8 +6,8 @@
 
 <body>
 	<header th:replace="plantilla/template :: header"></header>
-	<br>	
-			
+	<br>
+
 	<div class="container">
 		<table class="table">
 			<thead class="bg-dark text-white">
@@ -23,8 +23,7 @@
 					<th scope="col">Aula</th>
 					<th scope="col">Edificio</th>
 					<th scope="col">Codigo Curso</th>
-				<!--	<th scope="col">Editar</th>
-					<th scope="col">Eliminar</th>-->
+					<th scope="col">Reservar Espacio</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,17 +39,13 @@
 					<td th:text="${c.aula.numero}"></td>
 					<td th:text="${c.aula.edificio.edificio}"></td>
 					<td th:text="${c.cod_curso}"></td>
-					
-					<!--<td>
-						<a class="btn btn-success btn-sm" th:href="@{/views/usuarios/edit/} + ${us.idUsuario}"
-							th:text="'Editar'" title="Editar usuario">
+
+					<td>
+						<a class="btn btn-success btn-sm" th:href="@{/views/pedidosCurso/reserve/} + ${c.id_nota}"
+							th:text="'Aprobar'" title="Aprobar solicitud"
+							onclick="return confirm('Desea aprobar esta solicitud?')">
 						</a>
 					</td>
-					<td>
-						<a class="btn btn-danger btn-sm" th:href="@{/views/usuarios/delete/} + ${us.idUsuario}"
-							th:text="'Eliminar'" title="Eliminar usuario" onclick="return confirm('Seguro desea eliminar?')">
-						</a>
-					</td>-->
 				</tr>
 			</tbody>
 		</table>

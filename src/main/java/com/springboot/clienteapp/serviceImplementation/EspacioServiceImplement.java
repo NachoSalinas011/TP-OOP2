@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -62,4 +63,10 @@ public class EspacioServiceImplement implements IEspacioService {
 		
 		espacioRep.saveAll(lstEspacio);
 	}
+	
+	public Espacio findByFechaAndTurnoAndAula(LocalDate fecha, char turno, Aula aula){
+		return espacioRep.findByFechaAndTurnoAndAula(fecha, turno, aula);
+	}
+	
+
 }

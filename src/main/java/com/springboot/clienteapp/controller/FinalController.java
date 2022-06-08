@@ -1,5 +1,6 @@
 package com.springboot.clienteapp.controller;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -19,6 +20,7 @@ import com.springboot.clienteapp.models.entity.Final;
 import com.springboot.clienteapp.models.entity.Materia;
 import com.springboot.clienteapp.models.entity.Perfil;
 import com.springboot.clienteapp.models.entity.Usuario;
+import com.springboot.clienteapp.models.repository.EspacioRepository;
 import com.springboot.clienteapp.models.service.IAulaService;
 import com.springboot.clienteapp.models.service.IEspacioService;
 import com.springboot.clienteapp.models.service.IFinalService;
@@ -80,11 +82,12 @@ public class FinalController {
 	
 	
 	@GetMapping("/reserve/{id_nota}")
-	public String editar(@PathVariable("id_nota") int id, Model model) {
+	public String aceptarSolicitud(@PathVariable("id_nota") int id, Model model) {
 		Final f = finalService.traerPedidoFinal(id);
-		Espacio espacio = new Espacio(f.getFecha(), false, f.getTurno(), f.getAula());
-		finalService.eliminar(id);
-		espacioService.agregar(espacio);
+		Espacio e = espacioService.findByFechaAndTurnoAndAula(f.getFecha_examen(), f.getTurno(), f.getAula());
+		e.setLibre(false);
+		espacioService.agregar(e);
+		//finalService.eliminar(id);
 		return "redirect:/views/espacios/";
 	}
 	

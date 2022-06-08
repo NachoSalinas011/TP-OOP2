@@ -2,6 +2,7 @@ package com.springboot.clienteapp.models.service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import com.springboot.clienteapp.models.entity.Aula;
 import com.springboot.clienteapp.models.entity.Espacio;
@@ -13,7 +14,7 @@ public interface IEspacioService {
 	
 	public Espacio traerEspacio(int id);
 	
-	public void agregar(Espacio espacio);
+	public void agregar(Espacio e);
 	
 	public void eliminar(long id);
 	
@@ -24,5 +25,7 @@ public interface IEspacioService {
 	 * 
 	 * public void agregarEspacioMes(int mes, int anio, char turno, Aula aula);
 	 */
+	Espacio findByFechaAndTurnoAndAula(LocalDate fecha, char turno, Aula aula);
 	
+	//public void reservarEspacio(Espacio espacio);
 }

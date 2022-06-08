@@ -10,4 +10,6 @@ public interface ICursoService {
 	public Curso traerPedidoCurso(int id);
 
 	public void agregar(Curso curso);
+	
+	public void eliminar(long id);
 }
