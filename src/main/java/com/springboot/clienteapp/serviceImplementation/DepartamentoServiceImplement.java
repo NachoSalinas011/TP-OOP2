@@ -1,4 +1,4 @@
-package com.springboot.clienteapp.models.service;
+package com.springboot.clienteapp.serviceImplementation;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.springboot.clienteapp.models.entity.Departamento;
 import com.springboot.clienteapp.models.entity.Perfil;
 import com.springboot.clienteapp.models.repository.DepartamentoRepository;
+import com.springboot.clienteapp.models.service.IDepartamentoService;
 
 @Service
 public class DepartamentoServiceImplement implements IDepartamentoService {

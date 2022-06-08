@@ -24,7 +24,7 @@ public class Espacio implements Serializable{
 	private int id_espacio;
 	
 	@Column(name = "fecha")
-	private Date fecha;
+	private LocalDate fecha;
 	@Column(name = "libre")
 	private boolean libre;
 	@Column(name = "turno")
@@ -33,14 +33,12 @@ public class Espacio implements Serializable{
 	@OneToOne
 	@JoinColumn (name = "id_aula")
 	private Aula aula;
-
-	
 	
 	public Espacio() {
 		super();
 	}
 
-	public Espacio(Date fecha, boolean libre, char turno, Aula aula) {
+	public Espacio(LocalDate fecha, boolean libre, char turno, Aula aula) {
 		super();
 		this.fecha = fecha;
 		this.libre = libre;
@@ -56,11 +54,11 @@ public class Espacio implements Serializable{
 		this.id_espacio = id_espacio;
 	}
 
-	public Date getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 

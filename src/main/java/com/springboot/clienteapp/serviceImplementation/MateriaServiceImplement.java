@@ -1,4 +1,4 @@
-package com.springboot.clienteapp.models.service;
+package com.springboot.clienteapp.serviceImplementation;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.springboot.clienteapp.models.entity.Materia;
 import com.springboot.clienteapp.models.repository.MateriaRepository;
+import com.springboot.clienteapp.models.service.IMateriaService;
 
 @Service
 public class MateriaServiceImplement implements IMateriaService {

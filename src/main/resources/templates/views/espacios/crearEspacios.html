@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmls:th="https://thymeLeaf.org">
+
+<head th:replace="plantilla/template :: head">
+</head>
+
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+	<div class="container">
+		<br>
+		<div class="card bg-light">
+
+			<div class="card-header bg-dark text-white" th:text="${titulo}">
+				<h1>Crear Espacios</h1>
+			</div>
+
+
+			<div class="card-body">
+				<form th:action="@{/views/espacios/save}" th:object="${fechas}" th:method="post">
+
+					<div class="form-group row">
+						<label for="fecha" class="col-md-2">Fecha inicio</label>
+						<input type="date" th:field="*{fechaInicio}" class="form-control form-control-sm col-md-6"
+							id="fechaInicio" placeholder="Fecha">
+					</div>
+
+					<div class="form-group row">
+						<label for="fecha" class="col-md-2">Fecha fin</label>
+						<input type="date" th:field="*{fechaFin}" class="form-control form-control-sm col-md-6"
+							id="fechaFin" placeholder="Fecha fin">
+					</div>
+
+					<div class="card-footer bg-dark text-center">
+						<input type="submit" class="btn btn-primary btn-sm" value="Crear">
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+
+</html>

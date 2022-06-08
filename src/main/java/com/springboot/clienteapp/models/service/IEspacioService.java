@@ -16,6 +16,8 @@ public interface IEspacioService {
 	public void agregar(Espacio espacio);
 	
 	public void eliminar(long id);
+	
+	public void crearEspacios(LocalDate fechaInicio, LocalDate fechaFin);
 	/*
 	 * public void agregarEspacio (LocalDate fecha, char turno, Aula aula, boolean
 	 * libre);

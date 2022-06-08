@@ -1,4 +1,4 @@
-package com.springboot.clienteapp.models.service;
+package com.springboot.clienteapp.serviceImplementation;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.springboot.clienteapp.models.entity.Edificio;
 import com.springboot.clienteapp.models.repository.EdificioRepository;
+import com.springboot.clienteapp.models.service.IEdificioService;
 
 @Service
 public class EdificioServiceImplement implements IEdificioService {

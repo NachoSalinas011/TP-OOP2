@@ -1,4 +1,4 @@
-package com.springboot.clienteapp.models.service;
+package com.springboot.clienteapp.serviceImplementation;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.springboot.clienteapp.models.entity.Curso;
 import com.springboot.clienteapp.models.repository.CursoRepository;
+import com.springboot.clienteapp.models.service.ICursoService;
 
 @Service
 public class CursoServiceImplement implements ICursoService {

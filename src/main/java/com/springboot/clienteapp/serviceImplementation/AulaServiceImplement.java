@@ -1,4 +1,4 @@
-package com.springboot.clienteapp.models.service;
+package com.springboot.clienteapp.serviceImplementation;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.springboot.clienteapp.models.entity.Aula;
 import com.springboot.clienteapp.models.repository.AulaRepository;
+import com.springboot.clienteapp.models.service.IAulaService;
 
 @Service
 public class AulaServiceImplement implements IAulaService {

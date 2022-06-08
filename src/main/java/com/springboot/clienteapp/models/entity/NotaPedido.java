@@ -24,7 +24,7 @@ public class NotaPedido implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id_nota;
-	private Date fecha;
+	private LocalDate fecha;
 	private char turno;
 	private int cant_estudiantes;
 	private String observaciones;
@@ -48,11 +48,11 @@ public class NotaPedido implements Serializable{
 		this.id_nota = id_nota;
 	}
 
-	public Date getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 

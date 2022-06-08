@@ -2,6 +2,7 @@ package com.springboot.clienteapp.models.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,13 +18,13 @@ public class Final extends NotaPedido implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private Date fecha_examen;
+	private LocalDate fecha_examen;
 	
 	
-	public Date getFecha_examen() {
+	public LocalDate getFecha_examen() {
 		return fecha_examen;
 	}
-	public void setFecha_examen(Date fecha_examen) {
+	public void setFecha_examen(LocalDate fecha_examen) {
 		this.fecha_examen = fecha_examen;
 	}
 	@Override
