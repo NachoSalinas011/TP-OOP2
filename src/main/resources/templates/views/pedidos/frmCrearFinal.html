@@ -7,7 +7,7 @@
 <body>
 	<header th:replace="plantilla/template :: header"></header>
 
-	<div class="container">
+	<div class="container form">
 		<br>
 		<div class="card bg-light">
 
@@ -21,19 +21,19 @@
 
 					<div class="form-group row">
 						<input type="hidden" th:field="*{id_nota}">
-						<label for="fecha" class="col-md-2">Fecha</label>
+						<label for="fecha" class="col-md-4">Fecha</label>
 						<input type="date" th:field="*{fecha}" class="form-control form-control-sm col-md-6" id="fecha"
 							placeholder="Fecha">
 					</div>
 
 					<div class="form-group row">
-						<label for="fecha" class="col-md-2">Fecha Final</label>
+						<label for="fecha" class="col-md-4">Fecha Final</label>
 						<input type="date" th:field="*{fecha_examen}" class="form-control form-control-sm col-md-6"
 							id="fechaFinal" placeholder="Fecha Final">
 					</div>
 
 					<div class="form-group row">
-						<label for="turno" class="col-md-2">Turno</label>
+						<label for="turno" class="col-md-4">Turno</label>
 						<select th:field="*{turno}" id="turno">
 							<option value="m">Mañana</option>
 							<option value="t">Tarde</option>
@@ -43,7 +43,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="cant_estudiantes" class="col-md-2">Cantidad estudiantes</label>
+						<label for="cant_estudiantes" class="col-md-6">Cantidad estudiantes</label>
 						<input type="number" th:field="*{cant_estudiantes}"
 							class="form-control form-control-sm col-md-6" id="cant_estudiantes"
 							placeholder="Cantidad estudiantes">
@@ -57,7 +57,7 @@
 						</select>
 					</div>-->
 					<div class="form-group row">
-						<label for="materia" class="col-md-2">Materia</label>
+						<label for="materia" class="col-md-4">Materia</label>
 						<select th:field="*{materia}" class="form-control form-control-sm col-md-6" id="materia">
 							<option th:each="materia:${materias}" th:value="${materia.id_materia}"
 								th:text="${materia.materia_nombre}"></option>
@@ -65,13 +65,13 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="observaciones" class="col-md-2">Observaciones</label>
+						<label for="observaciones" class="col-md-5">Observaciones</label>
 						<input type="text" th:field="*{observaciones}" class="form-control form-control-sm col-md-6"
 							id="observaciones" placeholder="Observaciones">
 					</div>
 
 					<div class="form-group row">
-						<label for="aula" class="col-md-2">Aula</label>
+						<label for="aula" class="col-md-4">Aula</label>
 						<select th:field="*{aula}" class="form-control form-control-sm col-md-6" id="aula">
 							<option th:each="aula:${aulas}" th:value="${aula.id_aula}" th:text="${aula.numero}">
 							</option>

@@ -1,0 +1,7 @@
+.form{
+	width: 450px;
+}
+
+input:not([type="submit"]){
+	margin-bottom: 10px;
+}

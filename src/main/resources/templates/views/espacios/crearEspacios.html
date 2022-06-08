@@ -6,8 +6,8 @@
 
 <body>
 	<header th:replace="plantilla/template :: header"></header>
-	
-	<div class="container">
+
+	<div class="container form">
 		<br>
 		<div class="card bg-light">
 
@@ -20,17 +20,17 @@
 				<form th:action="@{/views/espacios/save}" th:object="${fechas}" th:method="post">
 
 					<div class="form-group row">
-						<label for="fecha" class="col-md-2">Fecha inicio</label>
+						<label for="fecha" class="col-md-4">Fecha inicio</label>
 						<input type="date" th:field="*{fechaInicio}" class="form-control form-control-sm col-md-6"
 							id="fechaInicio" placeholder="Fecha Inicio">
 					</div>
 
 					<div class="form-group row">
-						<label for="fecha" class="col-md-2">Fecha fin</label>
+						<label for="fecha" class="col-md-4">Fecha fin</label>
 						<input type="date" th:field="*{fechaFin}" class="form-control form-control-sm col-md-6"
 							id="fechaFin" placeholder="Fecha fin">
 					</div>
-
+					<br>
 					<div class="card-footer bg-dark text-center">
 						<input type="submit" class="btn btn-primary btn-sm" value="Crear">
 					</div>

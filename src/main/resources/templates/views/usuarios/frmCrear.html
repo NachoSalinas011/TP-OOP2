@@ -7,7 +7,7 @@
 <body>
 	<header th:replace="plantilla/template :: header"></header>
 
-	<div class="container">
+	<div class="container form">
 		<br>
 		<div class="card bg-light">
 
@@ -21,28 +21,28 @@
 
 					<div class="form-group row">
 						<input type="hidden" th:field="*{idUsuario}">
-						<label for="nombre" class="col-md-2">Nombre</label>
+						<label for="nombre" class="col-md-4">Nombre</label>
 						<input type="text" th:field="*{nombre}" class="form-control form-control-sm col-md-6"
 							id="nombre" placeholder="Nombre">
 						<small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}"
 							th:errors="*{nombre}"></small>
 					</div>
 					<div class="form-group row">
-						<label for="apellido" class="col-md-2">Apellido</label>
+						<label for="apellido" class="col-md-4">Apellido</label>
 						<input type="text" th:field="*{apellido}" class="form-control form-control-sm col-md-6"
 							id="apellido" placeholder="Apellido">
 						<small class="form-text text-danger" th:if="${#fields.hasErrors('apellido')}"
 							th:errors="*{apellido}"></small>
 					</div>
 					<div class="form-group row">
-						<label for="tipoDocumento" class="col-md-2">Tipo documento</label>
+						<label for="tipoDocumento" class="col-md-6">Tipo documento</label>
 						<input type="text" th:field="*{tipoDoc}" class="form-control form-control-sm col-md-6"
 							id="tipoDocumento" placeholder="Tipo documento">
 						<small class="form-text text-danger" th:if="${#fields.hasErrors('tipoDoc')}"
 							th:errors="*{tipoDoc}"></small>
 					</div>
 					<div class="form-group row">
-						<label for="documento" class="col-md-2">Documento</label>
+						<label for="documento" class="col-md-4">Documento</label>
 						<input type="text" th:field="*{nroDoc}" class="form-control form-control-sm col-md-6"
 							id="documento" placeholder="Documento">
 						<small class="form-text text-danger" th:if="${#fields.hasErrors('nroDoc')}"
@@ -50,7 +50,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="correo" class="col-md-2">Correo</label>
+						<label for="correo" class="col-md-4">Correo</label>
 						<input type="text" th:field="*{correo}" class="form-control form-control-sm col-md-6"
 							id="correo" placeholder="Correo">
 						<small class="form-text text-danger" th:if="${#fields.hasErrors('correo')}"
@@ -58,7 +58,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="usuario" class="col-md-2">Usuario</label>
+						<label for="usuario" class="col-md-4">Usuario</label>
 						<input type="text" th:field="*{nombreUsuario}" class="form-control form-control-sm col-md-6"
 							id="usuario" placeholder="Usuario">
 						<small class="form-text text-danger" th:if="${#fields.hasErrors('nombreUsuario')}"
@@ -66,7 +66,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="password" class="col-md-2">Password</label>
+						<label for="password" class="col-md-4">Password</label>
 						<input type="password" th:field="*{password}"  class="form-control form-control-sm col-md-6"
 							id="password" placeholder="Password">
 						<small class="form-text text-danger" th:if="${#fields.hasErrors('password')}"
@@ -74,7 +74,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="perfil" class="col-md-2">Perfil</label>
+						<label for="perfil" class="col-md-4">Perfil</label>
 						<select th:field="*{perfil}" class="form-control form-control-sm col-md-6" id="perfil">
 							<option th:each="perfil:${perfiles}" th:value="${perfil.id_perfil}"
 								th:text="${perfil.nombrePerfil}"></option>
