@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "nota_pedido")
@@ -24,9 +27,14 @@ public class NotaPedido implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id_nota;
+	@Column(name = "fecha")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate fecha;
+	@Column(name = "turno")
 	private char turno;
+	@Column(name = "cant_estudiantes")
 	private int cant_estudiantes;
+	@Column(name = "observaciones")
 	private String observaciones;
 	
 	@OneToOne

@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table (name = "espacio")
 public class Espacio implements Serializable{
@@ -24,6 +26,7 @@ public class Espacio implements Serializable{
 	private int id_espacio;
 	
 	@Column(name = "fecha")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate fecha;
 	@Column(name = "libre")
 	private boolean libre;
@@ -38,6 +41,7 @@ public class Espacio implements Serializable{
 		super();
 	}
 
+	
 	public Espacio(LocalDate fecha, boolean libre, char turno, Aula aula) {
 		super();
 		this.fecha = fecha;

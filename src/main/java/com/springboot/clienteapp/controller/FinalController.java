@@ -72,10 +72,10 @@ public class FinalController {
 		model.addAttribute("final", f);
 		model.addAttribute("materias", listaMaterias);
 		model.addAttribute("aulas", listaAulas);
-		return "/views/pedidos/frmCrearFinal";
+		return "/views/pedidos/";
 		}	
 		finalService.agregar(f);
-		return "redirect:/views/pedidos/frmCrearFinal";
+		return "redirect:/views/pedidos/";
 	}
 	
 	

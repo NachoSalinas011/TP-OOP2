@@ -1,5 +1,7 @@
 package com.springboot.clienteapp.controller;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,9 +17,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.springboot.clienteapp.models.entity.Aula;
 import com.springboot.clienteapp.models.entity.Espacio;
 import com.springboot.clienteapp.models.entity.Perfil;
 import com.springboot.clienteapp.models.entity.Usuario;
+import com.springboot.clienteapp.models.repository.EspacioRepository;
+import com.springboot.clienteapp.models.service.IAulaService;
 import com.springboot.clienteapp.models.service.IEspacioService;
 import com.springboot.clienteapp.util.modelDTO;
 
@@ -26,6 +31,9 @@ import com.springboot.clienteapp.util.modelDTO;
 public class EspacioController {
 	@Autowired
 	private IEspacioService espacioService;
+	@Autowired
+	private IAulaService aulaService;
+	
 	
 	@GetMapping("/")
 	public String listarPedidosFinal(Model model) {
@@ -37,20 +45,43 @@ public class EspacioController {
 		return "views/espacios/listarEspacios";
 	}
 	
-	@GetMapping("/create")
+@GetMapping("/create")
 	public String createEspacio(Model model) {
 		modelDTO fechas = new modelDTO();
 		
-		model.addAttribute("fechas", fechas);
 		model.addAttribute("titulo", "Formulario: Crear espacios");
+		model.addAttribute("fechas", fechas);
+		
 		
 		return "views/espacios/crearEspacios";
 	}
+	
+/*	@GetMapping("/create")
+	public String createEspacio(Model model) {
+		Espacio espacio = new Espacio();
+		
+		model.addAttribute("titulo", "Formulario: Crear espacios");
+		model.addAttribute("espacio", espacio);
+		
+		
+		return "views/espacios/crearEspacios";
+	}*/
 
 	@PostMapping("/save")
 	public String guardarEspacio(@ModelAttribute modelDTO fechas, Model model) {
-		System.out.println(fechas.toString());
-		return "1";
+		LocalDate fechaInicio = fechas.getFechaInicio();
+		LocalDate fechaFin = fechas.getFechaFin();
+		espacioService.crearEspacios(fechaInicio, fechaFin);
+		
+		return "views/espacios/crearEspacios";
 	}
+	
+/*	@PostMapping("/save")
+	public String guardarEspacio(@ModelAttribute Espacio espacio, Model model) {
+		List<Aula> listaAulas = aulaService.traerListaAulas();
+		espacio.setAula(listaAulas.get(1));
+		espacioService.agregar(espacio);
+		return "views/espacios/crearEspacios";
+	}*/
 	
 }

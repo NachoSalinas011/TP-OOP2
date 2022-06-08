@@ -65,10 +65,10 @@ public class CursoController {
 			model.addAttribute("curso", c);
 			model.addAttribute("materias", listaMaterias);
 			model.addAttribute("aulas", listaAulas);
-			return "/views/pedidos/frmCrearCurso";
+			return "/views/pedidosCurso/";
 		}	
 		cursoService.agregar(c);
-		return "redirect:/views/pedidos/frmCrearCurso";
+		return "redirect:/views/pedidosCurso/";
 
 	}
 }

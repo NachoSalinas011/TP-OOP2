@@ -1,15 +1,16 @@
 package com.springboot.clienteapp.util;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class modelDTO {
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
 	
+	
+	
 	public modelDTO() {
 		super();
-		this.fechaInicio = LocalDate.now();
-		this.fechaFin = LocalDate.now();
 	}
 	public LocalDate getFechaInicio() {
 		return fechaInicio;
