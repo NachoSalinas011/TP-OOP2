@@ -11,67 +11,137 @@
 <body>
 	<!--HEADER-->
 	<header th:fragment="header">
-	
+
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		
+
 			<div class="container" style="margin-left: 0%">
-			
-				<a class="navbar-brand" href="#"><img th:src="@{/img/UNLa.png}" width="30px"></a>
-				
+
+				<a class="navbar-brand" th:href="@{/index/}"><img th:src="@{/img/UNLa.png}" width="30px"></a>
+
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 					aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				
+
 				<!--ENLACES DEL MENU-->
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" th:href="@{/index/}">Inicio</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/usuarios/}">Lista usuarios</a>
+
+						<li class="nav-item dropdown">
+
+							<button class="btn btn-dark dropdown-toggle"  id="dropdownMenuButton"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Ver lista de
+							</button>
+
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" th:href="@{/views/usuarios/}">Usuarios</a>
+								<a class="dropdown-item" th:href="@{/views/perfiles/}">Perfiles</a>
+							</div>
+
+						</li>
+						
+						<li class="nav-item dropdown">
+
+							<button class="btn btn-dark dropdown-toggle"  id="dropdownMenuButton"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Crear
+							</button>
+
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" th:href="@{/views/usuarios/create}">Usuario</a>
+								<a class="dropdown-item" th:href="@{/views/perfiles/create}">Perfil</a>
+							</div>
+
+						</li>
+						
+						<li class="nav-item dropdown">
+
+							<button class="btn btn-dark dropdown-toggle"  id="dropdownMenuButton"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Solicitar espacio
+							</button>
+
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" th:href="@{/views/pedidos/create}">Final</a>
+								<a class="dropdown-item" th:href="@{/views/pedidosCurso/create}">Curso</a>
+							</div>
+
+						</li>
+						
+						<li class="nav-item dropdown">
+
+							<button class="btn btn-dark dropdown-toggle"  id="dropdownMenuButton"
+								data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Ver solicitudes
+							</button>
+
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" th:href="@{/views/pedidos/}">Espacios Final</a>
+								<a class="dropdown-item" th:href="@{/views/pedidosCurso/}">Espacios Curso</a>
+							</div>
+
+						</li>
+
+						<!--<li class="nav-item">
+							<a class="nav-link active" aria-current="page" th:href="@{/views/usuarios/}">Lista
+								usuarios</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/usuarios/create}">Crear usuario</a>
+							<a class="nav-link active" aria-current="page" th:href="@{/views/usuarios/create}">Crear
+								usuario</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/perfiles/}">Lista perfiles</a>
+							<a class="nav-link active" aria-current="page" th:href="@{/views/perfiles/}">Lista
+								perfiles</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/perfiles/create}">Crear perfil</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/pedidos/create}">Solicitar espacio Final</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/pedidosCurso/create}">Solicitar espacio Curso</a>
+							<a class="nav-link active" aria-current="page" th:href="@{/views/perfiles/create}">Crear
+								perfil</a>
 						</li>
 						
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/pedidos/}">Solicitudes de espacio Final</a>
+							<a class="nav-link active" aria-current="page" th:href="@{/views/pedidos/create}">Solicitar
+								espacio Final</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/pedidosCurso/}">Solicitudes de espacio Curso</a>
+							<a class="nav-link active" aria-current="page"
+								th:href="@{/views/pedidosCurso/create}">Solicitar espacio Curso</a>
 						</li>
-						
+
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/espacios/}">Espacios reservados</a>
+							<a class="nav-link active" aria-current="page" th:href="@{/views/pedidos/}">Solicitudes de
+								espacio Final</a>
 						</li>
-						
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" th:href="@{/views/espacios/create}">Crear espacios</a>
+							<a class="nav-link active" aria-current="page" th:href="@{/views/pedidosCurso/}">Solicitudes
+								de espacio Curso</a>
+						</li>-->
+
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" th:href="@{/views/espacios/}">Espacios
+								reservados</a>
 						</li>
-						
+						<!--
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" th:href="@{/views/espacios/create}">Crear
+								espacios</a>
+						</li>-->
+
 					</ul>
 				</div>
 				<div>
 					<form th:action="@{/logout}" method="post">
-						<input class="btn btn-success" style="cursor: pointer; ;margin-left:440%; background-color:#169277; color:white; letter-spacing:1px" type="submit" value="Cerrar sesión" />
+						<input class="btn btn-success"
+							style="cursor: pointer; ;margin-left:440%; background-color:#169277; color:white; letter-spacing:1px"
+							type="submit" value="Cerrar sesión" />
 					</form>
 				</div>
-											
+
 			</div>
 		</nav>
 	</header>
@@ -84,7 +154,7 @@
 		<div class="container">
 			<p>UNLa | OO2 | Grupo 8 </p>
 		</div>
-	
+
 		<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
 	</footer>
 
