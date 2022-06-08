@@ -82,9 +82,11 @@ public class CursoController {
 	public String aceptarSolicitud(@PathVariable("id_nota") int id, Model model) {
 		Curso c = cursoService.traerPedidoCurso(id);
 		Espacio e = espacioService.findByFechaAndTurnoAndAula(c.getFecha(), c.getTurno(), c.getAula());
-		e.setLibre(false);
-		espacioService.agregar(e);
-		//cursoService.eliminar(id);
+		if (e !=null) {
+			e.setLibre(false);
+			espacioService.agregar(e);
+			//cursoService.eliminar(id);
+		}	
 		return "redirect:/views/espacios/";
 	}
 }

@@ -85,9 +85,12 @@ public class FinalController {
 	public String aceptarSolicitud(@PathVariable("id_nota") int id, Model model) {
 		Final f = finalService.traerPedidoFinal(id);
 		Espacio e = espacioService.findByFechaAndTurnoAndAula(f.getFecha_examen(), f.getTurno(), f.getAula());
-		e.setLibre(false);
-		espacioService.agregar(e);
-		//finalService.eliminar(id);
+		if (e !=null) {
+			e.setLibre(false);
+			espacioService.agregar(e);
+			//finalService.eliminar(id);
+		}
+		
 		return "redirect:/views/espacios/";
 	}
 	
