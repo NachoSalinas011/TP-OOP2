@@ -12,7 +12,6 @@ CREATE TABLE `perfil` (
 
 insert into perfil values (NULL, 'administrador', default);
 insert into perfil values (NULL, 'auditoria', default);
-select * from perfil;
 
 CREATE TABLE `usuario` (
   `id_usuario` int NOT NULL AUTO_INCREMENT,
@@ -187,17 +186,6 @@ INSERT INTO `materia` VALUES
  (NULL, '8603-3','Matematica 1',1, 'Vanesa Plaul'),
  (NULL, '01','Salud Colectiva',2, '');
  
- select * from materia;
- select * from carrera;
- select * from departamento;
- select * from usuario;
-  select * from edificio;
- select * from aula;
- select * from espacio;
- 
- select * from nota_pedido;
-select * from curso;
- select * from final;
 
 /*----------------------- Fin Parte Pedido --------------------------*/
 

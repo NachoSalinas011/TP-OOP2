@@ -27,17 +27,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests()
 				.antMatchers("/css/*", "/img/*", "/js/*", "/css/bootstrap/*", "/favicon.ico").permitAll()
 				
-				.antMatchers("/views/pedidos/*",
-							"/views/pedidosCurso/*")
+				.antMatchers("/views/pedidosCurso/create",
+							"/views/pedidosCurso/save",
+							"/views/pedidos/create",
+							"/views/pedidos/save")
 				.hasAuthority("auditoria")
 				
 				.antMatchers("/views/*/create",
 							"/views/*/save",
 							"/views/*/edit/*",
 							"/views/*/delete/*",
-							"/views/*/reserve/*",
-							"/views/pedidos/*",
-							"/views/pedidosCurso/*")
+							"/views/*/reserve/*")
 				.hasAuthority("administrador")
 				
 
