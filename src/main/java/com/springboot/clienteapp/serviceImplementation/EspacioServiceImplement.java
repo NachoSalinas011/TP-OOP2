@@ -53,9 +53,13 @@ public class EspacioServiceImplement implements IEspacioService {
 			for (Aula aula : aulas) {
 				for (char c : turnos) { //Todos los días, por cada turno y aula se crea un espacio
 					
-					Espacio espacioAgregar = new Espacio(fechaAux, true, c, aula);
+					Espacio existeEspacio = espacioRep.findByFechaAndTurnoAndAula(fechaAux, c, aula);
 					
-					lstEspacio.add(espacioAgregar);
+					if(existeEspacio == null)
+					{
+						Espacio espacioAgregar = new Espacio(fechaAux, true, c, aula); //Si no existe espacio lo creo
+						lstEspacio.add(espacioAgregar);
+					}
 				}
 			}
 			fechaAux = fechaAux.plusDays(1);

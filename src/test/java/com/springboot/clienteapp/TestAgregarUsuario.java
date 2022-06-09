@@ -25,22 +25,37 @@ class TestAgregarUsuario {
 		BCryptPasswordEncoder pe = new BCryptPasswordEncoder();
 		
 		Usuario user = new Usuario();
+		Usuario admin = new Usuario();
 		
-		Perfil rol = perfilService.traer(1);
+		Perfil rolAdmin = perfilService.traer(1);
+		Perfil rolUser = perfilService.traer(2);
 		
-		long idUsuario = 3;
-		user.setIdUsuario(idUsuario);
-
-		user.setNombre("Fede");
-		user.setApellido("Frumbo");
-		user.setCorreo("f@gmail.com.ar");
-		user.setNombreUsuario("f");
-		user.setPerfil(rol);
+		long idUser = 1;
+		long idAdmin = 2;
+		
+		user.setIdUsuario(idUser);
+		user.setNombre("Nacho");
+		user.setApellido("Salinas");
+		user.setCorreo("user@user.com");
+		user.setNombreUsuario("user");
+		user.setPerfil(rolUser);
 		user.setTipoDoc("DNI");
-		user.setNroDoc("36821884");	
-		user.setPassword("123");
+		user.setNroDoc("42284321");	
+		user.setPassword("user");
+		
+		admin.setIdUsuario(idAdmin);
+		admin.setNombre("Vanina");
+		admin.setApellido("Acosta");
+		admin.setCorreo("admin@admin.com");
+		admin.setNombreUsuario("admin");
+		admin.setPerfil(rolAdmin);
+		admin.setTipoDoc("DNI");
+		admin.setNroDoc("26200863");
+		admin.setPassword("admin");
 		
 		usuarioService.agregar(user);
+		usuarioService.agregar(admin);
+
 	}
 
 }

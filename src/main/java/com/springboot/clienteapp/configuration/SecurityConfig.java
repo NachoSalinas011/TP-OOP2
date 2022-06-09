@@ -26,11 +26,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers("/css/*", "/img/*", "/js/*", "/css/bootstrap/*", "/favicon.ico").permitAll()
+				
+				.antMatchers("/views/pedidos/*",
+							"/views/pedidosCurso/*")
+				.hasAuthority("auditoria")
+				
 				.antMatchers("/views/*/create",
 							"/views/*/save",
 							"/views/*/edit/*",
-							"/views/*/delete/*")
+							"/views/*/delete/*",
+							"/views/*/reserve/*",
+							"/views/pedidos/*",
+							"/views/pedidosCurso/*")
 				.hasAuthority("administrador")
+				
+
+				
 				.anyRequest().authenticated()
 			.and()
 				.formLogin().loginPage("/login").loginProcessingUrl("/loginprocess")
